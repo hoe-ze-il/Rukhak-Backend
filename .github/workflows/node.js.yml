@@ -1,0 +1,76 @@
+# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
+
+name: Node.js CI
+
+on:
+  push:
+    branches: ["main"]
+
+# env:
+#   NODE_ENV: ${{ secrets.NODE_ENV }}
+#   PORT: ${{ secrets.PORT }}
+
+jobs:
+  build:
+    runs-on: self-hosted
+    strategy:
+      matrix:
+        node-version: [166.x]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "npm"
+      - run: npm ci
+      # - name: Test Env
+      #   run: echo "Env $NODE_ENV"
+      #     && echo "Port $PORT"
+      #     && echo "Page limit ${{ secrets.PAGE_LIMIT_DEFAULT }}"
+      - name: Set up environment file
+        run: echo "NODE_ENV=${{ secrets.NODE_ENV }}" > .env
+          && echo "PORT=${{ secrets.PORT }}" >> .env
+          && echo "PAGE_LIMIT_DEFAULT=${{ secrets.PAGE_LIMIT_DEFAULT }}" >> .env
+          && echo "CLIENT_URL=${{ secrets.CLIENT_URL }}" >> .env
+          && echo "IPINFO_TOKEN=${{ secrets.IPINFO_TOKEN }}" >> .env
+          && echo "EMAIL_FROM=${{ secrets.EMAIL_FROM }}" >> .env
+          && echo "EMAIL_PASSWORD=${{ secrets.EMAIL_PASSWORD }}" >> .env
+          && echo "ACCOUNT_ACTIVATION_TOKEN=${{ secrets.ACCOUNT_ACTIVATION_TOKEN }}" >> .env
+          && echo "ACCESS_TOKEN_SECRET=${{ secrets.ACCESS_TOKEN_SECRET }}" >> .env
+          && echo "REFRESH_TOKEN_SECRET=${{ secrets.REFRESH_TOKEN_SECRET }}" >> .env
+          && echo "GOOGLE_CLIENT_ID=${{ secrets.GOOGLE_CLIENT_ID }}" >> .env
+          && echo "ACCOUNT_ACTICATION_TOKEN_EXPIRES=${{ secrets.ACCOUNT_ACTICATION_TOKEN_EXPIRES }}" >> .env
+          && echo "ACCESS_TOKEN_EXPIRES=${{ secrets.ACCESS_TOKEN_EXPIRES }}" >> .env
+          && echo "REFRESH_TOKEN_EXPIRES=${{ secrets.REFRESH_TOKEN_EXPIRES }}" >> .env
+          && echo "COOKIES_EXPIRES=${{ secrets.COOKIES_EXPIRES }}" >> .env
+          && echo "GOOGLE_PROJECT_ID=${{ secrets.GOOGLE_PROJECT_ID }}" >> .env
+          && echo "DIALOGFLOW_SESSION_ID=${{ secrets.DIALOGFLOW_SESSION_ID }}" >> .env
+          && echo "DIALOGFLOW_SESSION_LANGUAGE_CODE=${{ secrets.DIALOGFLOW_SESSION_LANGUAGE_CODE }}" >> .env
+          && echo "GOOGLE_CLIENT_EMAIL=${{ secrets.GOOGLE_CLIENT_EMAIL }}" >> .env
+          && echo "GOOGLE_PRIVATE_KEY=${{ secrets.GOOGLE_PRIVATE_KEY }}" >> .env
+          && echo "GOOGLE_APPLICATION_CREDENTIALS=${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}" >> .env
+          && echo "AWS_BUCKET_NAME=${{ secrets.AWS_BUCKET_NAME }}" >> .env
+          && echo "AWS_BUCKET_REGION=${{ secrets.AWS_BUCKET_REGION }}" >> .env
+          && echo "AWS_ACCESS_KEY=${{ secrets.AWS_ACCESS_KEY }}" >> .env
+          && echo "AWS_SECRET_KEY=${{ secrets.AWS_SECRET_KEY }}" >> .env
+          && echo "MONGO_ATLAS_DATABASE=${{ secrets.MONGO_ATLAS_DATABASE }}" >> .env
+          && echo "MONGO_ATLAS_API_BASE_URL=${{ secrets.MONGO_ATLAS_API_BASE_URL }}" >> .env
+          && echo "MONGO_ATLAS_PROJECT_ID=${{ secrets.MONGO_ATLAS_PROJECT_ID }}" >> .env
+          && echo "MONGO_ATLAS_CLUSTER=${{ secrets.MONGO_ATLAS_CLUSTER }}" >> .env
+          && echo "MONGO_ATLAS_PUBLIC_KEY=${{ secrets.MONGO_ATLAS_PUBLIC_KEY }}" >> .env
+          && echo "MONGO_ATLAS_PRIVATE_KEY=${{ secrets.MONGO_ATLAS_PRIVATE_KEY }}" >> .env
+          && echo "MONGO_URI_DEV=${{ secrets.MONGO_URI_DEV }}" >> .env
+          && echo "USER_IMAGE_URL_EXPIRES=${{ secrets.USER_IMAGE_URL_EXPIRES }}" >> .env
+          && echo "GA_PROPERTY_ID=${{ secrets.GA_PROPERTY_ID }}" >> .env
+          && echo "GA_PRIVATE_KEY=${{ secrets.GA_PRIVATE_KEY }}" >> .env
+          && echo "GA_CLIENT_EMAIL=${{ secrets.GA_CLIENT_EMAIL }}" >> .env
+          && echo "PRODUCTION_URL=${{ secrets.PRODUCTION_URL }}" >> .env
+          && echo "UNQILD=${{ secrets.UNQILD }}" >> .env
+
+      - run: npm run build --if-present
+      - run: sudo systemctl restart rukhakbackend.service
+      - run: sudo systemctl restart nginx
