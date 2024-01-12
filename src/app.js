@@ -1,4 +1,4 @@
-import express from "express";
+import express, { application } from "express";
 import morgan from "morgan";
 import cors from "cors";
 import v1Routes from "./routes/v1/index.js";
@@ -32,6 +32,10 @@ app.use(useragent.express());
 
 // API endpoints
 app.use("/api/v1", v1Routes);
+
+app.use("/api/v1" (req, res) => {
+  res.send("Welcome to Rukhak!")
+})
 
 // Error handler
 app.use(notFound);
