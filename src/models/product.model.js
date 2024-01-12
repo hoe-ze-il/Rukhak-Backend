@@ -33,7 +33,6 @@ const productSchema = new mongoose.Schema(
     },
     unit: {
       type: String,
-      enum: ["item", "kg", "pot"],
       default: "item",
     },
     availableStock: {
