@@ -33,9 +33,9 @@ app.use(useragent.express());
 // API endpoints
 app.use("/api/v1", v1Routes);
 
-app.use("/api/v1" (req, res) => {
-  res.send("Welcome to Rukhak!")
-})
+app.use("/api/v1", (req, res) => {
+  res.send("Welcome to Rukhak!");
+});
 
 // Error handler
 app.use(notFound);
