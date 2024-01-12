@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Order Cancellation</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        background-color: #f9f9f9;
+        color: #333;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        max-width: 600px;
+        margin: auto;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      h1 {
+        color: #be4343;
+        text-align: center;
+      }
+
+      p {
+        font-size: 16px;
+        line-height: 1.5;
+        color: #555;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 12px;
+        text-align: left;
+      }
+
+      th {
+        background-color: #be4343;
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container" style="background-color: #be4343; margin-top: 20px">
+      <h1 style="color: white">Order Cancellation</h1>
+    </div>
+    <div class="container">
+      <p>Hi Leng,</p>
+      <p>
+        We apologize, but your order on
+        <a href="http://ec2-3-106-199-129.ap-southeast-2.compute.amazonaws.com"
+          >Rukhak.com</a
+        >
+        has been cancelled.
+      </p>
+      <p>Order details:</p>
+      <h2>[Order ID: #${orderId}] (2023-12-25)</h2>
+    </div>
+    <div class="container">
+      <table>
+        <tr>
+          <th>Product</th>
+          <th>Quantity</th>
+          <th>Price</th>
+          <th>Subtotal</th>
+        </tr>
+        ${CancelledRow}
+        <tr>
+          <td colspan="3" style="text-align: right">Payment Method:</td>
+          <td>${payment}</td>
+        </tr>
+        <tr>
+          <td colspan="3" style="text-align: right">Total:</td>
+          <td>$${total}</td>
+        </tr>
+      </table>
+    </div>
+    <div class="container">
+      <p>Please let us know if we can help!</p>
+
+      <p>Cheers,</p>
+      <p>RukhakShop Team</p>
+    </div>
+  </body>
+</html>

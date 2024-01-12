@@ -1,0 +1,91 @@
+<html>
+  <head>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        background-color: #f9f9f9;
+        color: #333;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        max-width: 600px;
+        margin: 20px auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      h1 {
+        color: #3498db;
+      }
+
+      p {
+        font-size: 16px;
+        line-height: 1.5;
+        color: #555;
+      }
+
+      .otp-container {
+        margin-top: 20px;
+        padding: 10px;
+        font-weight: 800;
+        text-align: center;
+        font-size: 20px;
+      }
+
+      .important-note {
+        margin-top: 20px;
+        color: #fff;
+        padding: 10px;
+        border-radius: 5px;
+      }
+
+      .footer {
+        margin-top: 20px;
+        text-align: center;
+        color: #777;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Rukhak Email Confirmation Code</h1>
+
+      <p>Hello</p>
+
+      <p><strong>${OTP}</strong> is your email confirmation code.</p>
+
+      <p>
+        Enter the below code to finish confirming email address. This code will
+        expire in 10 minutes.
+      </p>
+
+      <div class="otp-container">${OTP}</div>
+
+      <div class="important-note">
+        <p>
+          <strong>IMPORTANT:</strong> Don't share your security codes with
+          anyone. Rukhak will never ask you for your codes. This can include
+          things like texting your code, screensharing, etc. By sharing your
+          security codes with someone else, you are putting your account and its
+          content at high risk.
+        </p>
+      </div>
+
+      <p>Thank You,<br />The Rukhak Team</p>
+
+      <p>
+        <strong>Do not reply to this email directly.</strong> You are receiving
+        this email because there was a request to change email. If you did not
+        make this request, please ignore this email.
+      </p>
+
+      <div class="footer">
+        <p>&copy; 2023 Rukhak Corporation. All rights reserved.</p>
+      </div>
+    </div>
+  </body>
+</html>

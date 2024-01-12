@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Order Confirmation</title>
+  <style>
+    body {
+      font-family: "Arial", sans-serif;
+      background-color: #e8f4e5;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 16px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      background-color: #fff;
+    }
+
+    h2 {
+      text-align: center;
+      color: #3d7042;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    th,
+    td {
+      padding: 10px;
+      border: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #aed581;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    strong {
+      color: #3d7042;
+    }
+
+    .a-link {
+      margin-top: 20px;
+    }
+
+    .a-link a {
+      text-decoration: none;
+      text-align: center;
+      color: #fff;
+      background-color: #3d7042;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      display: inline-block;
+      font-size: 16px;
+    }
+
+    .footer {
+      margin-top: 20px;
+      text-align: center;
+      color: #777;
+    }
+
+    /* Responsive styles */
+    @media (max-width: 600px) {
+      .container {
+        width: 100%;
+        border-radius: 0;
+        margin: 0;
+      }
+
+      table {
+        margin-top: 10px;
+      }
+
+      .a-link a {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h2>New Order Arrived</h2>
+
+    <p>Dear valued seller,</p>
+
+    <p>
+      You have received a new order for your products. Here are the details:
+    </p>
+
+    <table>
+      <tr>
+        <th>Item</th>
+        <th>Quantity</th>
+        <th>Unit Price</th>
+        <th>Total Price</th>
+        <th>Picture</th>
+      </tr>
+
+      ${cartItemsWithDetails}
+      <tr>
+        <td colspan="3" style="text-align: right">
+          <strong>Total</strong>
+        </td>
+        <td>
+          <strong>$${totalPrice}</strong>
+        </td>
+      </tr>
+    </table>
+
+    <p>
+      Thank you for using our platform! Please review the order details and
+      approve it by clicking the button below:
+    </p>
+
+    <p class="a-link">
+      <a href=`http://ec2-3-106-199-129.ap-southeast-2.compute.amazonaws.com/seller/order/${orderId}`>View Order</a>
+    </p>
+      Thank you for choosing us! Visit us at 🌱
+      <a href="http://ec2-3-106-199-129.ap-southeast-2.compute.amazonaws.com/" target="_blank">Rukhak.com</a>.
+    </p>
+    <p class="footer">&copy; 2023 RUKHAK TEAM. All rights reserved.</p>
+  </div>
+</body>
+
+</html>

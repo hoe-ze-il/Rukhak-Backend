@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Order Approved</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        background-color: #e8f4e5; /* Light green background */
+      }
+
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        background-color: #fff; /* White container background */
+      }
+
+      h2 {
+        text-align: center;
+        color: #3d7042; /* Dark green heading */
+      }
+
+      p {
+        text-align: justify;
+        color: #333;
+      }
+
+      h3 {
+        text-align: center;
+        color: #fff; /* White text color for the button */
+        background-color: #3d7042; /* Dark green background for the button */
+        padding: 0.5rem 1.5rem; /* Add padding for a better appearance */
+        border-radius: 5px; /* Optional: Add border radius for rounded corners */
+        cursor: pointer; /* Add a pointer cursor on hover */
+        display: inline-block; /* Display as inline-block to adjust width */
+      }
+
+      .footer-link {
+        text-align: center;
+        margin-top: 20px;
+      }
+      .footer {
+        margin-top: 20px;
+        text-align: center;
+        color: #777;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Order Approved</h2>
+
+      <p>Dear valued customer,</p>
+      <p>That is your order <strong>#${orderId}</strong></p>
+      <p>
+        We are excited to inform you that your order on Rukhak.com has been
+        approved and is now being processed. Below are the details of your
+        approved purchase:
+      </p>
+
+      <div class="footer-link">
+        <a
+          href="http://ec2-3-106-199-129.ap-southeast-2.compute.amazonaws.com/orderhistory"
+          target="_blank"
+        >
+          <h3>Track Order</h3>
+        </a>
+      </div>
+
+      <p>
+        Your order is now confirmed and will be shipped shortly. We appreciate
+        your business and look forward to serving you again.
+      </p>
+
+      <p class="footer-link">
+        Thank you for choosing us! Visit us at 🌱
+        <a
+          href="http://ec2-3-106-199-129.ap-southeast-2.compute.amazonaws.com"
+          target="_blank"
+          >Rukhak.com</a
+        >.
+      </p>
+
+      <p class="footer">&copy; 2023 RUKHAK TEAM. All rights reserved.</p>
+    </div>
+  </body>
+</html>

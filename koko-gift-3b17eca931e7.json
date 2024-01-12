@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "koko-gift",
+  "private_key_id": "3b17eca931e776848221923afa469d93049209e6",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCwQS2j9az7Y337\n3MZpRmosI8MQ8fUNcf9K3L7bETqtiNcMZ+E3pmGnBqKQ0wIjy6sSAgcrd2VwXM9P\nrFe+vdk/rw6PaJ6CNcD7ui/i1aVPju0h5nkcr7AU1b894Dshpsu3TCoSj7AaoEC2\njG7looiJ8+hCn+fVMyVFgfdMEIzd1OOJiF5H5XWemXySPye02j1y5olDmADXlJoK\n3ca4wCmyFdo59FwyivA5qYRjEpN1qUUUAQmuZSDWeyn7ji6Ryb/hrEmANyVKjPkU\nc4CV+DObxmXEh+xsv8bxCEl+03WiIgUyA8uW1UMoGh9swLzMMkJ13zZORpBSNVLw\n3WG/TYi3AgMBAAECggEACNEx5c5f+XF4N3XLbS/LFusxEnNwNVx7D3UsjQv3GgBK\n9cFqmFyX7QGdd04/AKhrJer5Ddkat3zFGDDAcPfRWui4ez8aEtx6i308cQYMD4dQ\nYI5Fh8RYNCqfNwq1GpFcBo7mWehbQHG82wT6dT1kxDXx7AdQ0y8MUcZXJzR6v4wV\n7VuVlXbr2VkGoNoNtW8ueTDlTX54NKXtLAmUTw0ts9yKGqahGflGGGwZW1/l9Uu0\nTvzPY1X4e6yBE7vBhq2EIePcCw4eQyPVoi86ldKK4UTGofniBqr4I77x9trYA9uK\n8A9sCJoqCaPpR+lOSuU/r0W4vgVn0YxEdvVu7hyKLQKBgQDwcZPXcBBu4qwpo1WJ\nz7Qruy2DEb80EnL0HJjr50Wt20q++CeKNUo32wPyVwfHIm7uanCgAqW+UkrvYLH7\njV7Ows1riqY4t0yzN4hMNzbcaWhmSqCYI8sgBaWvR9yg64fS/ft/z/22ZCtHKPTD\nPcocwY9Cjq4mFeH3JFy03/w5IwKBgQC7qHMbMybLmmZHWOXnLaiiORR2LS35dtdn\nY0xI6D221CidhrEAov8zsFjUp7kEh+IYTAJ3Aw6dnXMgs4xCcbGViOjx9J3Sg4xs\nR2/PXST/6byG5ODPG6DD6TsxPuedVe3hLrvODw4AvHDcksXATfvgexVtOpsfFTzU\nifGOGoINXQKBgQCMI1ZsqWcaiciYGBeB0+oJ1vVmwBA11E7lkklarRfChd5hwZai\nCf8w4NjDBRCGcr4+/RCZYhGiBKqiLDRwDexlC8rYVB4fTk5I4iPxb/jsrA7qF7LU\nGYCJMGFp8LNZow0t31QXIW2ZQXar6eYGaVwEOJg7zZcYoYZrGelijm2eCwKBgCXR\nGXk2wq+vKsNgB9yhl+UxKY1zJ1updlkwapQasS0h7hlopkzhjBpHhG8+aYufMpIA\n51JCfHSI4UWKyU4uiUIAOCliSVe+CNNdRgv80lL8MHDiuOcjwy8X1kTjT1umkGyb\ntV8eK408bGYW8eECFiszwqqjb9VAu2R9c/9WGjVFAoGAEYGU3FNfeZcTmcZ/yWjn\ngT6b5LVGR/s7n/YdaCm92d4b/+GEVxkuucDht8pt9IAES60NS7lAaN2QRxTLCT/B\nZQyJw2BSHFs4C/KG9mvrgw5ajn09iQF9uDCGK4yg6WerrVSpacTmu4hl+QUGWwCD\n+HGAOajgci2IznYNvpuKfZg=\n-----END PRIVATE KEY-----\n",
+  "client_email": "bot-161@koko-gift.iam.gserviceaccount.com",
+  "client_id": "117907183193442572971",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/bot-161%40koko-gift.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

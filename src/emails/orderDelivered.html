@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Order Confirmation</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        background-color: #e8f4e5;
+      }
+
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        background-color: #fff;
+        margin-bottom: 8px;
+      }
+
+      h2 {
+        text-align: center;
+        color: #3d7042;
+      }
+
+      .footer-link {
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      .button a {
+        text-align: center;
+        color: #fff; /* White text color for the button */
+        background-color: #3d7042; /* Dark green background for the button */
+        padding: 0.5rem 1.5rem; /* Add padding for a better appearance */
+        border-radius: 5px; /* Optional: Add border radius for rounded corners */
+        cursor: pointer; /* Add a pointer cursor on hover */
+        display: inline-block; /* Display as inline-block to adjust width */
+      }
+
+      .button {
+        text-align: center;
+        margin-top: 20px;
+      }
+      .footer {
+        margin-top: 20px;
+        text-align: center;
+        color: #777;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      @media (max-width: 600px) {
+        .container {
+          width: 90%;
+          border-radius: 0;
+          margin: 0;
+        }
+
+        .a-link a {
+          display: block;
+          width: 90%;
+          box-sizing: border-box;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h2>Your order has been delivered</h2>
+
+      <p>Dear valued customer,</p>
+
+      <p>
+        Thanks for shopping with us ! We are glad to inform you that order
+        <strong>#${orderId}</strong> has been fully delivered with details as
+        below. We hope you enjoy your purchase on
+        <a href="http://ec2-3-106-199-129.ap-southeast-2.compute.amazonaws.com">
+          Rukhak.com</a
+        >!
+      </p>
+      <h4>What's Next?</h4>
+
+      <p>
+        Please Let us know what you think about the product. Your opinion will
+        help us and our sellers improve
+      </p>
+      <div class="button">
+        <a href="Review.com">WRITE A REVIEW</a>
+      </div>
+    </div>
+
+    <div class="container">
+      <h4>Delivery Details</h4>
+
+      <p>Name: ${user}</p>
+      <p>Address: ${adress}</p>
+      <p>Email: ${userEmail}</p>
+      <p>PhoneNumber: ${phoneNumber}</p>
+    </div>
+
+    <div class="container">
+      <p>Product Order Details</p>
+      ${cartItemsWithDetails}
+    </div>
+
+    <div class="container">
+      <p>Subtotal: $${total}</p>
+      <p>Discount: $0</p>
+      <p>Shipping fee: $0</p>
+      <p>Total (Vat included): $${totall}</p>
+      <hr />
+      <p>Delivery Type: STANDARD</p>
+      <p>Payment Method: ${payment}</p>
+    </div>
+
+    <div class="container">
+      <p>Note</p>
+      <p>
+        Please keep your invoice and orginal packaging in case you need to
+        return replace, or clain your product's warranty,
+      </p>
+      <p>
+        Return are easy! Check
+        <a href="https://www.rukhak.com">Return Type and How to Return !</a>
+      </p>
+    </div>
+
+    <div class="container">
+      <p class="footer-link">
+        Thank you for choosing us! Visit us at 🌱
+        <a href="https://www.rukhak.com" target="_blank">Rukhak.com</a>.
+      </p>
+      <p class="footer">&copy; 2023 RUKHAK TEAM. All rights reserved.</p>
+    </div>
+  </body>
+</html>

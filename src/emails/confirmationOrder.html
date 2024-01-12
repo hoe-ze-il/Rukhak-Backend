@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Order Confirmation</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        background-color: #e8f4e5;
+      }
+
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        background-color: #fff;
+      }
+
+      h2 {
+        text-align: center;
+        color: #3d7042;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+
+      th,
+      td {
+        padding: 10px;
+        border: 1px solid #ddd;
+      }
+
+      th {
+        background-color: #aed581;
+      }
+
+      tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+
+      strong {
+        color: #3d7042;
+      }
+
+      .footer-link {
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      .footer-link a {
+        text-decoration: none;
+      }
+      .footer {
+        margin-top: 20px;
+        text-align: center;
+        color: #777;
+      }
+      @media (max-width: 600px) {
+        .container {
+          width: 100%;
+          border-radius: 0;
+          margin: 0;
+        }
+
+        table {
+          margin-top: 10px;
+        }
+
+        .a-link a {
+          display: block;
+          width: 100%;
+          box-sizing: border-box;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h2>Order Confirmation</h2>
+
+      <p>Dear valued customer,</p>
+
+      <p>
+        Thank you for your purchase item in our Rukhak website. We are pleased
+        to confirm that we have received your order. Below are the details of
+        your purchase:
+      </p>
+
+      <table>
+        <tr>
+          <th>Item</th>
+          <th>Quantity</th>
+          <th>Unit Price</th>
+          <th>Total Price</th>
+          <th>Picture</th>
+        </tr>
+        ${cartItemsWithDetails}
+        <tr>
+          <td colspan="3" style="text-align: right">
+            <strong>Total</strong>
+          </td>
+          <td>
+            <strong>$${totalPrice}</strong>
+          </td>
+        </tr>
+      </table>
+
+      <p>
+        Your order has been successfully placed. We will notify you once ours
+        seller approve.
+      </p>
+      <img src="${url}" alt="" />
+      <p class="footer-link">
+        Thank you for choosing us! Visit us at 🌱
+        <a
+          href="http://ec2-3-106-199-129.ap-southeast-2.compute.amazonaws.com"
+          target="_blank"
+          >Rukhak.com</a
+        >.
+      </p>
+      <p class="footer">&copy; 2023 RUKHAK TEAM. All rights reserved.</p>
+    </div>
+  </body>
+</html>
