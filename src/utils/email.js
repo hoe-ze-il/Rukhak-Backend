@@ -12,6 +12,9 @@ const sendEmailWithNodemailer = async (emailData) => {
         user: process.env.EMAIL_FROM,
         pass: process.env.EMAIL_PASSWORD,
       },
+      tls: {
+        ciphers: "SSLv3",
+      },
     });
 
     const info = await transporter.sendMail(emailData);

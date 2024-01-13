@@ -16,7 +16,7 @@ const is2FA = catchAsync(async (req, res, next) => {
   }
   const OTP = await user.createOTPToken();
   await user.save({ validateBeforeSave: false });
-  const emailData = await authService.twoFA.createEmail(user.email, OTP);
+  const emailData = await authService.twoFA.createEmail(user, OTP);
   const resultSendEmail = await sendEmailWithNodemailer(emailData);
   authService.twoFA.verifyResult(next, resultSendEmail);
 

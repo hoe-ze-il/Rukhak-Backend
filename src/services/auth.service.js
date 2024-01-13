@@ -402,7 +402,8 @@ const authService = {
     },
   },
   twoFA: {
-    async createEmail(email, OTP) {
+    async createEmail(user, OTP, data) {
+      const email = data?.newEmail ? user.tempEmail : user.email;
       const emailTemplate = await fs.promises.readFile(
         path.join(__dirname, "..", "emails", "twoFA.html"),
         "utf-8"

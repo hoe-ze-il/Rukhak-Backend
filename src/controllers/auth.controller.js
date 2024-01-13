@@ -241,7 +241,7 @@ const authController = {
     const user = req?.user;
     const OTP = await user.createOTPToken();
     await user.save({ validateBeforeSave: false });
-    const emailData = await authService.twoFA.createEmail(user.email, OTP);
+    const emailData = await authService.twoFA.createEmail(user, OTP, req.body);
     const resultSendEmail = await sendEmailWithNodemailer(emailData);
     authService.twoFA.verifyResult(resultSendEmail);
     res.status(200).json({
